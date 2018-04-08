@@ -69,7 +69,7 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>-->
 
-    <!--/ ji既可以使用*.do 也可以使用/ -->
+    <!--/ 既可以使用*.do 也可以使用/ ,以为商城当中使用了jsp,所以使用/-->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
