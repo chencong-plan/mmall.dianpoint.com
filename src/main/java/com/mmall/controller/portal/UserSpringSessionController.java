@@ -48,8 +48,6 @@ public class UserSpringSessionController {
                                       String password,
                                       HttpSession session,
                                       HttpServletResponse httpServletResponse) {
-        int i = 0;
-        int j = 666 / i;
         ServerResponse<User> response = iUserService.login(username, password);
         if (response.isSuccess()) {
             /*此时为单节点tomcat，在这里已经将session存储在redis 当中了*/
