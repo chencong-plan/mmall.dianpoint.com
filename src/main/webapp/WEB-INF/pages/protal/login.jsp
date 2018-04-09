@@ -20,7 +20,10 @@
 <div class="account-header">
     <div>
         <a href="http://www.biyao.com/home/index.html"></a>
-        <p>欢迎来到必要，请<span class="account-login">登录</span>|<span class="account-regist">注册</span></p>
+        <p>欢迎来到必要，请
+            <span class="account-login">登录</span>
+            |<span class="account-regist">注册
+            </span></p>
     </div>
 </div>
 
@@ -147,6 +150,7 @@
     window.ControllerSite = "http://www.biyao.com";
     window.ApiSite = "http://api.biyao.com";
     window.loginUserId = "0";
+
 </script>
 
 <script type="text/javascript" src="http://static.biyao.com/pc/common/js/jquery-1.8.3.js?v=biyao_7d074dc"></script>
