@@ -9,8 +9,10 @@
         </ul>
         <ul class="header-user">
             <li class="user-out">
-                <a href="javascript:void(0)" id="loginBtn" class="user-login">登录</a>
-                <a href="javascript:void(0)" id="registBtn">注册</a>
+                <%--<a href="javascript:void(0)" id="loginBtn" class="user-login">登录</a>--%>
+                <%--<a href="javascript:void(0)" id="registBtn">注册</a>--%>
+                <a href="${basePath}/account/login" id="loginBtn" class="user-login">登录</a>
+                <a href="${basePath}/account/regist" id="registBtn">注册</a>
                 <b></b>
             </li>
             <li class="user-center">

@@ -1,0 +1,486 @@
+.account-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eae4e8
+}
+
+.account-header div {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.account-header a {
+    float: left;
+    width: 239px;
+    height: 98px;
+    background: url(http://static1.biyao.com/pc/common/img/master/logo.png?v=biyao_e06b35d) 0 center no-repeat
+}
+
+.account-header p {
+    float: right;
+    line-height: 98px;
+    color: #8c8292
+}
+
+.account-header span {
+    margin: 0 5px
+}
+
+.account-main {
+    width: 400px;
+    height: 580px;
+    margin: 0 auto
+}
+
+.account-main li {
+    position: relative;
+    margin-top: 20px
+}
+
+.account-main input {
+    height: 17px;
+    width: 360px;
+    padding: 11px 20px;
+    border: 1px solid #e8e8e8;
+    line-height: 17px;
+    font: 14px "Microsoft YaHei";
+    color: #999;
+    background: #fff;
+    outline: 0;
+    vertical-align: middle
+}
+
+.account-main .input-error {
+    border: 1px solid #F49F26
+}
+
+.account-main s {
+    position: absolute;
+    top: 11px;
+    left: 22px;
+    display: block;
+    text-decoration: blink;
+    font-size: 14px;
+    color: #999
+}
+
+.account-main .account-error {
+    position: absolute;
+    right: -315px;
+    top: 0;
+    display: block;
+    width: 300px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    color: #F33
+}
+
+.account-title {
+    font-size: 20px;
+    color: #523669
+}
+
+.account-title b {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url(http://static2.biyao.com/pc/common/img/master/sprit_biyao.png?v=biyao_653b0c0) no-repeat;
+    background-position: 0 -521px
+}
+
+.account-imgCode {
+    display: none
+}
+
+.account-imgCode input {
+    width: 160px
+}
+
+.account-imgCode img {
+    width: 120px;
+    height: 45px;
+    margin: 0 15px
+}
+
+.account-imgCode span {
+    display: inline-block;
+    color: #999;
+    text-decoration: underline;
+    cursor: pointer;
+    vertical-align: middle
+}
+
+.account-phoneCode {
+}
+
+.account-phoneCode input {
+    width: 200px
+}
+
+.account-phoneCode span {
+    float: right;
+    height: 40px;
+    width: 140px;
+    margin-left: 17px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    background-color: #724A88;
+    font-size: 15px;
+    cursor: pointer
+}
+
+.account-prompt {
+    margin-top: 10px !important;
+    padding: 6px 0;
+    color: #F49F26
+}
+
+.account-prompt a {
+    color: #07a6df
+}
+
+.account-btn {
+    height: 50px;
+    margin-top: 10px !important;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: #F49F26
+}
+
+.login-auto {
+}
+
+.login-auto span {
+    display: inline-block;
+    margin-right: 10px;
+    color: #8a8a8a;
+    cursor: pointer
+}
+
+.login-auto b {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url(http://static3.biyao.com/pc/common/img/master/commonSprite.png?v=biyao_eed067d) no-repeat 0 -80px
+}
+
+.login-auto .login-remember {
+    background: url(http://static4.biyao.com/pc/common/img/commonSprite.png?v=biyao_5aacedb) no-repeat -20px -80px
+}
+
+.login-auto a {
+    float: right;
+    color: #07a6df
+}
+
+.login-third {
+    margin-top: 40px !important;
+    text-align: center
+}
+
+.login-third span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+    vertical-align: middle
+}
+
+.login-third a {
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    border-left: 1px solid #ddd;
+    color: #333;
+    background: url(http://static.biyao.com/pc/common/img/master/weix.jpg?v=biyao_4db9847) no-repeat;
+    vertical-align: middle
+}
+
+.login-third .third-qq {
+    margin-left: 10px;
+    background: url(http://static1.biyao.com/pc/common/img/master/qq.jpg?v=biyao_16b2004) no-repeat
+}
+
+.regist-agree {
+}
+
+.regist-agree span {
+    display: inline-block;
+    margin-right: 10px;
+    color: #8a8a8a;
+    cursor: pointer
+}
+
+.regist-agree b {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: bottom;
+    background: url(http://static2.biyao.com/pc/common/img/master/commonSprite.png?v=biyao_eed067d) no-repeat 0 -80px
+}
+
+.regist-agree a {
+    margin-left: 10px;
+    color: #07a6df
+}
+
+.regist-agree .regist-yes {
+    background: url(http://static3.biyao.com/pc/common/img/master/commonSprite.png?v=biyao_eed067d) no-repeat -20px -80px
+}
+
+.account-fpw b {
+    background: url(http://static4.biyao.com/pc/common/img/master/sprit_biyao.png?v=biyao_653b0c0) no-repeat;
+    background-position: -504px -44px
+}
+
+.account-bind .account-title span {
+    float: right;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer
+}
+
+.account-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: none;
+    width: 100%;
+    height: 100%
+}
+
+.dialog-gray {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 201;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=50);
+    -maz-opacity: .5;
+    opacity: .5
+}
+
+.dialog-main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 202;
+    width: 364px;
+    padding: 0 20px 25px;
+    margin: -50px 0 0 -202px;
+    background-color: #fff
+}
+
+.dialog-title {
+    height: 40px;
+    border-bottom: 1px dotted #ccc;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #fff
+}
+
+.dialog-content {
+    padding: 20px
+}
+
+.dialog-btn {
+    text-align: center
+}
+
+.dialog-btn li {
+    display: inline-block;
+    height: 28px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 3px;
+    line-height: 28px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background-color: #724A88;
+    cursor: pointer
+}
+
+.dialog-contain {
+    margin-right: 20px
+}
+
+.dialog-btn .dialog-cancle {
+    background-color: #999
+}
+
+.dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    background: url(http://static.biyao.com/pc/common/img/master/cls_btn.png?v=biyao_614d241) no-repeat;
+    cursor: pointer
+}
+
+.account-dialogLogin {
+    height: 480px;
+    width: 400px;
+    margin: 0;
+    padding: 0 15px;
+    background: #fff
+}
+
+.account-dialogLogin ul {
+    padding-top: 5px
+}
+
+.account-dialogLogin .account-error {
+    display: block;
+    top: 35px;
+    left: 0;
+    padding-left: 20px
+}
+
+.account-dialogLogin .account-password, .account-dialogLogin .account-imgCode, .account-dialogLogin .login-auto {
+    margin-top: 30px
+}
+
+.geetest_panel_error_code {
+    display: none
+}
+
+.biyao-caution {
+    margin-top: 20px;
+    color: #a00;
+    line-height: 15px;
+    font-size: 14px
+}
+
+.biyao-caution img {
+    width: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    line-height: 15px
+}
+
+.hide {
+    display: none
+}
+
+.account-title {
+    margin-top: 30px
+}
+
+.account-sms-btn {
+    height: 50px;
+    margin-top: 19px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: #F49F26
+}
+
+.smssw {
+    cursor: pointer;
+    font-weight: 600;
+    color: #8fd3aa
+}
+
+.account-phoneCode span.getSms {
+    background-color: #d6cdd9
+}
+
+.account-title a {
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color: #724A88;
+    float: right
+}
+
+.account-title a img {
+    height: 24px
+}
+
+.qrcodeDivBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.qrcodeDivBox .qrcode-background {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+    z-index: 100
+}
+
+.qrcodeDivBox .qrcode-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -215px;
+    margin-top: -140px;
+    width: 430px;
+    height: 280px;
+    background-color: #fff
+}
+
+.qrcodeDivBox .qrcode-content .qrcode-top {
+    width: 400px;
+    height: 200px;
+    padding: 15px
+}
+
+.qrcodeDivBox .qrcode-content .qrcode-btm {
+    height: 49px;
+    border-top: 1px solid #eee
+}
+
+.qrcodeDivBox .qrcode-content .qrcode-btm span {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(http://static1.biyao.com/pc/www/img/account/icon-close.png?v=biyao_23e46ee) no-repeat;
+    cursor: pointer
+}
+
+.qrcodeDivBox .qrcodeDiv {
+    display: block;
+    width: 400px;
+    height: 200px
+}
+
+.SMCaptcha-captcha-wrapper .SMCaptcha-slider-wrapper .SMCaptcha-slider-text {
+    font-size: 14px
+}
+
+.qrcodeDivBox._show {
+    margin-left: 0
+}
+
+.qrcodeDivBox._hide {
+    margin-left: -100%
+}
