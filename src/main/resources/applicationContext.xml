@@ -29,6 +29,6 @@
     <import resource="applicationContext-datasource.xml"/>
 
     <!--引入spring-session的配置文件-->
-    <import resource="applicationContext-spring-session.xml"/>
+    <!--<import resource="applicationContext-spring-session.xml"/>-->
 
 </beans>
