@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
-<div class="header header-index">
-    <div class="clearfix">
+<div class="clearfix">
         <ul class="header-nav">
             <li><a href="http://www.biyao.com/home/index.html" target="_blank">首页</a><b></b></li>
             <li><a href="http://www.biyao.com/minisite/bzzx" target="_blank">平台政策</a><b></b></li>
@@ -77,4 +76,3 @@
             </li>
         </ul>
     </div>
-</div>

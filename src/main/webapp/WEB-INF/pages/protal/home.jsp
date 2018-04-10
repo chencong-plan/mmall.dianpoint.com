@@ -17,7 +17,9 @@
 
 
 <!-- 顶部栏 -->
-<%@ include file="../common/header.jsp" %>
+<div class="header header-index">
+    <%@ include file="../common/header.jsp" %>
+</div>
 
 
 <!-- 导航栏 -->

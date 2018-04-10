@@ -2,6 +2,7 @@ package com.mmall.web.portal;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -21,5 +22,18 @@ public class AppUserController {
     @RequestMapping("account/regist")
     public String regist(Model model) {
         return "/protal/regist";
+    }
+
+    /**
+     * 用户中心
+     *
+     * @param userId userId
+     * @param model  model
+     * @return 返回用户中心页面
+     */
+    @RequestMapping("/u/{userId}")
+    public String user(@PathVariable(value = "userId") Integer userId, Model model) {
+        return "/protal/profile";
+
     }
 }
