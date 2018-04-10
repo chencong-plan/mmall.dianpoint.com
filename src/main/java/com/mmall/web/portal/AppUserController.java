@@ -36,4 +36,30 @@ public class AppUserController {
         return "/protal/profile";
 
     }
+
+    /**
+     * 进入用户地址管理页面
+     *
+     * @param userId 用户id
+     * @param model  model
+     * @return 返回用户地址管理页面
+     */
+    @RequestMapping(value = "/u/{userId}/address")
+    public String address(@PathVariable(value = "userId") Integer userId, Model model) {
+        return "protal/myAddressManage";
+    }
+
+    /**
+     * 进入修改密码页面
+     *
+     * @param userId 用户id
+     * @param model  model
+     * @return 返回用户修改密码页面
+     */
+    @RequestMapping(value = "/u/{userId}/password")
+    public String changePassword(@PathVariable(value = "userId") Integer userId, Model model) {
+        return "protal/changePassword";
+    }
+
+
 }

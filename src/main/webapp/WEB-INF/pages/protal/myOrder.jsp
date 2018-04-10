@@ -25,11 +25,11 @@
     <%--<link type="text/css" href="http://static2.biyao.com/pc/www/css/cm_www.css?v=biyao_2fbd950" rel="stylesheet"/>--%>
     <%--<link href="${basePath}/resources/css/myCenter.css"/>--%>
 
-    <link type="text/css" href="http://static1.biyao.com/pc/common/css/common.css?v=biyao_a0e66f3" rel="stylesheet" />
-    <link type="text/css" href="http://static2.biyao.com/pc/www/css/cm_www.css?v=biyao_2fbd950" rel="stylesheet" />
-    <link type="text/css" href="http://static3.biyao.com/pc/common/css/new.main.css?v=biyao_e279cc3" rel="stylesheet" />
+    <link type="text/css" href="http://static1.biyao.com/pc/common/css/common.css?v=biyao_a0e66f3" rel="stylesheet"/>
+    <link type="text/css" href="http://static2.biyao.com/pc/www/css/cm_www.css?v=biyao_2fbd950" rel="stylesheet"/>
+    <link type="text/css" href="http://static3.biyao.com/pc/common/css/new.main.css?v=biyao_e279cc3" rel="stylesheet"/>
     <link type="text/css" href="http://static4.biyao.com/pc/www/css/myCenter.css?v=biyao_ace6b3b"
-          rel="stylesheet" />
+          rel="stylesheet"/>
 
 </head>
 <body>
@@ -58,8 +58,6 @@
 </div>
 
 
-
-
 <!-- 右边栏 -->
 <%@ include file="../common/rightAndShare.jsp" %>
 
@@ -80,9 +78,9 @@
         <div class="per_leftbox">
             <div class="perleft_menu pdtb_20">
                 <ul>
-                    <li class="a_check "><a href="/MyCenters/MyOrder.html"><i class="f_r mcMIcon3 inline"></i>我的订单</a>
+                    <li class="a_check "><a href="${basePath}/u/1/order"><i class="f_r mcMIcon3 inline"></i>我的订单</a>
                     </li>
-                    <li class=" "><a href="/MyCenter/Profile.html"><i class="f_r mcMIcon8 inline"></i>个人设置</a></li>
+                    <li class=" "><a href="${basePath}/u/1"><i class="f_r mcMIcon8 inline"></i>个人设置</a></li>
                 </ul>
             </div>
         </div>
