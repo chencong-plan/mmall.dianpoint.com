@@ -224,6 +224,9 @@ if (StringUtils.equals(className,"UserManageController") && StringUtils.equals(m
  * Redis分布式锁的流程图
  * Redis分布式锁优化版流程图
 
+### 2018年4月10日16:00:13 修改
+> 对mmall.properties当中的redis节点地址进行修改为服务器
+去掉项目当中springSession的单点登录，分别是applicationContext当中依赖和web.xml当中
 
 ## 联系
 
