@@ -127,7 +127,7 @@
             </li>
             <%--眼镜商品列表--%>
             <li>
-                <a target="_blank" href="http://www.biyao.com/products/1300225049000000002-0.html">
+                <a target="_blank" href="${basePath}/products/1">
                     <i><img src="http://bfs.biyao.com/group1/M00/23/D2/rBACYVodAx-AfQsHAABJOJW2v4Q969.jpg" alt=""/></i>
                     <dl>
                         <dt>钛架半框-开</dt>
@@ -135,8 +135,6 @@
                     </dl>
                 </a>
             </li>
-
-
             <li>
                 <a target="_blank" href="http://www.biyao.com/products/1300225009000000002-0.html">
                     <i><img src="http://bfs.biyao.com/group1/M00/33/6A/rBACYVrEk3yAACrXAABMx1ocysU346.jpg" alt=""/></i>
@@ -146,8 +144,6 @@
                     </dl>
                 </a>
             </li>
-
-
             <li>
                 <a target="_blank" href="http://www.biyao.com/products/1300225048000000002-0.html">
                     <i><img src="http://bfs.biyao.com/group1/M00/23/D2/rBACYVodAQaAGYIXAABPM5z47ig710.jpg" alt=""/></i>
@@ -157,7 +153,6 @@
                     </dl>
                 </a>
             </li>
-
         </ul>
     </div>
 
