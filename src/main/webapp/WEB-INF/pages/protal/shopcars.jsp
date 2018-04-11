@@ -264,10 +264,9 @@
             </div>
         </div>
         <div class="tallyBox">
-            <a href="http://www.biyao.com/home/index.html"
+            <a href="${basePath}/"
                class="inline goonShopping ">继续购物</a>
-            <a href="javascript:;"
-               class=" tallyBTnPos inline span_submit_calre js_btn">结算</a>
+            <a href="${basePath}/u/1/confirmOrder" class=" tallyBTnPos inline span_submit_calre js_btn">结算</a>
             <p class="t_r">
                 合计：<span class="f20 ff6600 inline vTop priceDisplay jsjs">
 				¥269</span><span class="inline f14 fb ff6600 vTop mg_l5"></span>

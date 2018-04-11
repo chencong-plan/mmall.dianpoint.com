@@ -19,6 +19,12 @@ public class AppUserController {
         return "/protal/login";
     }
 
+    @RequestMapping("account/logout")
+    public String logout(Model model) {
+        //TODO 清除session缓存  退出登录  模仿请求logout.do接口 跳转到首页
+        return "protal/home";
+    }
+
     @RequestMapping("account/regist")
     public String regist(Model model) {
         return "/protal/regist";

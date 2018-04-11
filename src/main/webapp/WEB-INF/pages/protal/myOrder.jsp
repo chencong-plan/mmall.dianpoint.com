@@ -135,6 +135,7 @@
                             <tr data-unfacceptance="0"
                                 data-supplierid="130083"
                                 data-orderid="122012208509461113">
+                                <%--商品详情--%>
                                 <td width="46%" class="bd_r J_popup_parent">
 
                                     <table width="100%" height="100px" cellspacing="0" cellpadding="0">
@@ -176,13 +177,15 @@
                                     </table>
 
                                 </td>
-
+                                <%--价格--%>
                                 <td width="18%" align="center" class="bd_l vTop pd_t15 lineH20"><strong
                                         class="col_f60 f14">￥339</strong>
 
                                     <br><span>（运费：￥0）</span>
 
                                 </td>
+
+                                <%--交易关闭，订单详情--%>
                                 <td width="18%" align="center" class="bd_l vTop pd_t15 lineH20">
                                     <span class="col_f60">交易关闭 </span>
                                     <br>
@@ -192,10 +195,9 @@
 
 
                                 </td>
-                                <td width="18%" align="center"
-                                    class="bd_l vTop  pd_l20 pd_r20 pd_t5">
-
-                                    <br/>
+                                <td width="18%" align="center" class="bd_l vTop  pd_l20 pd_r20 pd_t5">
+                                    <a href="http://buy.biyao.com/order/onlineCharge?order_id_list=MTIyMDEyMzQzODA1ODI3OTg1" class="publicBtn publicBtn_h25 publicBtn_f60 inline mg_t10">立即付款</a><br>
+                                    <a href="javascript:void(0)" class="cancelOrder  mg_t10 inline relative" orderid="122012343805827985">取消订单</a>
                                 </td>
                             </tr>
                             </tbody>

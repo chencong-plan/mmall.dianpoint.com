@@ -26,4 +26,27 @@ public class AppOrderController {
         return "protal/myOrder";
     }
 
+    /**
+     * 购物车当中确认订单
+     *
+     * @param userId 用户userId
+     * @param model  model
+     * @return 跳转到确认订单页面
+     */
+    @RequestMapping("/u/{userId}/confirmOrder")
+    public String confirmOrder(@PathVariable(value = "userId") Integer userId, Model model) {
+        return "protal/confirmOrder";
+    }
+
+    /**
+     * 确认订单页面跳转到提交支付页面
+     *
+     * @param userId 用户id
+     * @param model  model
+     * @return 返回pay页面
+     */
+    @RequestMapping("/u/{userId}/order/pay")
+    public String orderPay(@PathVariable(value = "userId") Integer userId, Model model) {
+        return "protal/pay";
+    }
 }
