@@ -3,34 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="必要商城是一家C2M模式的电子商务平台，旨在通过用户直连制造商（Customer TO Manufactory），砍掉传统零售中的所有加价环节，使消费者以出厂成本价就能买到高品质的产品。"/>
-    <meta name="Keywords" content="必要;必要商城;必要平台;必要电商;C2M商城;工业4.0;定制平台;定制商城;奢侈品定制;定制鞋;定制包;定制眼镜;定制饰品;定制运动服;定制运动鞋" />
-    <meta property="qc:admins" content="35713343766211176375747716" />
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>必要  - 买大牌制造商产品，上必要</title>
-    <link href="http://static.biyao.com/pc/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="http://static3.biyao.com/pc/common/css/common.css?v=biyao_a0e66f3" rel="stylesheet" type="text/css" />
-    <link href="http://static4.biyao.com/pc/common/css/new.main.css?v=biyao_e279cc3" rel="stylesheet" type="text/css" />
 
+    <link href="${basePath}/resources/css/common/common.css" rel="stylesheet" type="text/css" />
+    <link href="${basePath}/resources/css/common/new.main.css" rel="stylesheet" type="text/css" />
 
-    <link type="text/css" href="http://static2.biyao.com/pc/www/css/editor_by.css?v=biyao_38774c0" rel="stylesheet" />
-    <link type="text/css" href="http://static3.biyao.com/pc/www/css/new.product.css?v=biyao_0c23ead&v=20171207" rel="stylesheet" />
+    <link type="text/css" href="${basePath}/resources/css/editor_by.css" rel="stylesheet" />
+    <link type="text/css" href="${basePath}/resources/css/new.product.css" rel="stylesheet" />
 
 </head>
 <body id="pagebody">
 
-
-
-
-
 <div class="header">
     <%@ include file="../../common/header.jsp"%>
 </div>
-
-
-
 
 <!-- 导航栏 -->
 <div class="nav">
@@ -55,7 +41,7 @@
 
 <div class="section">
     <div class="section-bread">
-        <a href="http://www.biyao.com/home/index.html">首页</a>
+        <a href="${basePath}/">首页</a>
         <span class="bread-title">&gt;&nbsp;60S/2条纹桑蚕丝针织衫</span>
     </div>
     <div class="section-editor clearfix">
