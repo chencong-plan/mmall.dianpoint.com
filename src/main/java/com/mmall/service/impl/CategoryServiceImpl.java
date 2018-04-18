@@ -6,8 +6,14 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mmall.common.ServerResponse;
 import com.mmall.dao.CategoryMapper;
+import com.mmall.dao.ProductMapper;
 import com.mmall.pojo.Category;
+import com.mmall.pojo.Product;
 import com.mmall.service.ICategoryService;
+import com.mmall.util.DateTimeUtil;
+import com.mmall.util.PropertiesUtil;
+import com.mmall.vo.ProductDetailVo;
+import com.mmall.vo.page.CateProductVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -15,6 +21,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -28,6 +36,9 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Autowired
     private CategoryMapper categoryMapper;
+
+    @Autowired
+    private ProductMapper productMapper;
 
     public ServerResponse addCategory(String categoryName, Integer parentId) {
         if (parentId == null || StringUtils.isBlank(categoryName)) {
@@ -105,6 +116,26 @@ public class CategoryServiceImpl implements ICategoryService {
         return categorySet;
     }
 
+    /**
+     * 递归查询本节点的id及孩子节点的id
+     *
+     * @param categoryId categoryId
+     * @return
+     */
+    private List<Integer> getCategoryAndChildrenById(Integer categoryId) {
+        Set<Category> categorySet = Sets.newHashSet();
+        findChildCategory(categorySet, categoryId);
+
+
+        List<Integer> categoryIdList = Lists.newArrayList();
+        if (categoryId != null) {
+            for (Category categoryItem : categorySet) {
+                categoryIdList.add(categoryItem.getId());
+            }
+        }
+        return categoryIdList;
+    }
+
 
     /**
      * 通过父节点id获取所有子节点信息
@@ -115,12 +146,68 @@ public class CategoryServiceImpl implements ICategoryService {
      * @return 返回pageInfo
      */
     @Override
-    public PageInfo getCategoryByPreId(Integer categoryId, Integer pageSize, Integer pageNum) {
+    public PageInfo<Category> getCategoryByPreId(Integer categoryId, Integer pageSize, Integer pageNum) {
         PageHelper.startPage(pageNum, pageSize);
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
-
-        return null;
+        PageInfo<Category> pageResult = new PageInfo<>(categoryList);
+        return pageResult;
     }
 
+    @Override
+    public PageInfo<CateProductVo> getCateProductListByPreId(Integer pageSize, Integer pageNum) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Category> categoryList = categoryMapper.selectCategoryByPreId(0);
+        List<CateProductVo> cateProductVoList = new ArrayList<>();
+        for (Category category : categoryList) {
+            List<Category> cateList = categoryMapper.selectCategoryByPreId(category.getId());
+            CateProductVo cateProductVo = new CateProductVo();
+            cateProductVo.setParentId(category.getParentId());
+            cateProductVo.setCategoryName(category.getName());
+            cateProductVo.setCategoryId(category.getId());
+            if (cateList != null || cateList.size() > 0) {
+                List<Integer> ids = Arrays.asList(cateList.get(0).getId());
+                //TODO set pageSize
+                PageHelper.startPage(pageNum, pageSize + 5);
+                List<Product> productList = productMapper.selectByNameAndCategoryIds(null, ids);
+                List<ProductDetailVo> productDetailVoList = assembleProductDetailVo(productList);
+                cateProductVo.setProductList(productDetailVoList);
+            } else {
+                continue;
+            }
+            cateProductVoList.add(cateProductVo);
+        }
+
+        return new PageInfo<>(cateProductVoList);
+    }
+
+    /**
+     * 组装productDetailVo
+     *
+     * @param productList productList
+     * @return 返回productDetailVo
+     */
+    private List<ProductDetailVo> assembleProductDetailVo(List<Product> productList) {
+        List<ProductDetailVo> productDetailVoList = new ArrayList<>();
+        for (Product product : productList) {
+            ProductDetailVo productDetailVo = new ProductDetailVo();
+            productDetailVo.setId(product.getId());
+            productDetailVo.setCategoryId(product.getCategoryId());
+            productDetailVo.setName(product.getName());
+            productDetailVo.setSubtitle(product.getSubtitle());
+            productDetailVo.setMainImage(product.getMainImage());
+            productDetailVo.setSubImages(product.getSubImages());
+            productDetailVo.setDetail(product.getDetail());
+            productDetailVo.setPrice(product.getPrice());
+            productDetailVo.setStock(product.getStock());
+            productDetailVo.setStatus(product.getStatus());
+            productDetailVo.setCreateTime(DateTimeUtil.dateToStr(product.getCreateTime()));
+            productDetailVo.setUpdateTime(DateTimeUtil.dateToStr(product.getUpdateTime()));
+
+            productDetailVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix", "http://img.dianpoint.com/"));
+
+            productDetailVoList.add(productDetailVo);
+        }
+        return productDetailVoList;
+    }
 
 }

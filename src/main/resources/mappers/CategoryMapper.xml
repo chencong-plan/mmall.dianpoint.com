@@ -124,6 +124,13 @@
     where parent_id = #{parentId}
   </select>
 
+  <select id="selectCategoryByPreId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      select
+          <include refid="Base_Column_List"/>
+      from mmall_category
+      where parent_id = #{parentId}
+  </select>
+
 
 
 
