@@ -146,6 +146,7 @@
 <script type="text/javascript" src="http://static1.biyao.com/pc/common/js/jquery.cookie.js?v=biyao_a5283b2"></script>
 <%--首页轮播和图片导航栏--%>
 <%@ include file="../common/commonJs.jsp"%>
+<script type="text/javascript"	src="http://static.biyao.com/pc/common/js/common.js?v=biyao_85d404c"></script>
 
 <script type="text/javascript" src="http://static.biyao.com/pc/www/js/master/index.js?v=biyao_a4f6158"></script>
 
