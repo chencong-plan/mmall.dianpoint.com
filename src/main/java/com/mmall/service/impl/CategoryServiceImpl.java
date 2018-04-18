@@ -14,6 +14,7 @@ import com.mmall.util.DateTimeUtil;
 import com.mmall.util.PropertiesUtil;
 import com.mmall.vo.ProductDetailVo;
 import com.mmall.vo.page.CateProductVo;
+import com.mmall.vo.page.CategoryVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -153,6 +154,18 @@ public class CategoryServiceImpl implements ICategoryService {
         return pageResult;
     }
 
+    /**
+     * 通过categoryId查询其子分类信息
+     *
+     * @param categoryId 将要查询的分类id
+     * @return
+     */
+    @Override
+    public List<Category> getCategoryByPreId(Integer categoryId) {
+        List<Category> categoryList = categoryMapper.selectCategoryByPreId(categoryId);
+        return categoryList;
+    }
+
     @Override
     public PageInfo<CateProductVo> getCateProductListByPreId(Integer pageSize, Integer pageNum) {
         PageHelper.startPage(pageNum, pageSize);
@@ -189,25 +202,94 @@ public class CategoryServiceImpl implements ICategoryService {
     private List<ProductDetailVo> assembleProductDetailVo(List<Product> productList) {
         List<ProductDetailVo> productDetailVoList = new ArrayList<>();
         for (Product product : productList) {
-            ProductDetailVo productDetailVo = new ProductDetailVo();
-            productDetailVo.setId(product.getId());
-            productDetailVo.setCategoryId(product.getCategoryId());
-            productDetailVo.setName(product.getName());
-            productDetailVo.setSubtitle(product.getSubtitle());
-            productDetailVo.setMainImage(product.getMainImage());
-            productDetailVo.setSubImages(product.getSubImages());
-            productDetailVo.setDetail(product.getDetail());
-            productDetailVo.setPrice(product.getPrice());
-            productDetailVo.setStock(product.getStock());
-            productDetailVo.setStatus(product.getStatus());
-            productDetailVo.setCreateTime(DateTimeUtil.dateToStr(product.getCreateTime()));
-            productDetailVo.setUpdateTime(DateTimeUtil.dateToStr(product.getUpdateTime()));
-
-            productDetailVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix", "http://img.dianpoint.com/"));
-
+            ProductDetailVo productDetailVo = assembleCateProductDetailVo(product);
             productDetailVoList.add(productDetailVo);
         }
         return productDetailVoList;
+    }
+
+    /**
+     * 组装productDetailVo
+     *
+     * @param product
+     * @return
+     */
+    private ProductDetailVo assembleCateProductDetailVo(Product product) {
+        ProductDetailVo productDetailVo = new ProductDetailVo();
+        productDetailVo.setId(product.getId());
+        productDetailVo.setCategoryId(product.getCategoryId());
+        productDetailVo.setName(product.getName());
+        productDetailVo.setSubtitle(product.getSubtitle());
+        productDetailVo.setMainImage(product.getMainImage());
+        productDetailVo.setSubImages(product.getSubImages());
+        productDetailVo.setDetail(product.getDetail());
+        productDetailVo.setPrice(product.getPrice());
+        productDetailVo.setStock(product.getStock());
+        productDetailVo.setStatus(product.getStatus());
+        productDetailVo.setCreateTime(DateTimeUtil.dateToStr(product.getCreateTime()));
+        productDetailVo.setUpdateTime(DateTimeUtil.dateToStr(product.getUpdateTime()));
+
+        productDetailVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix", "http://img.dianpoint.com/"));
+        return productDetailVo;
+    }
+
+    /**
+     * 通过父分类id，查询该分类下的所有子分类信息
+     *
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public CategoryVo getCategoryVoByPreId(Integer categoryId) {
+        Category category = categoryMapper.selectByPrimaryKey(categoryId);
+        if (category == null) {
+            return null;
+        }
+        List<Category> categoryList = categoryMapper.selectCategoryByPreId(categoryId);
+        CategoryVo categoryVo = new CategoryVo();
+        categoryVo.setCategoryId(category.getId());
+        categoryVo.setCategoryName(category.getName());
+        categoryVo.setChildCategory(categoryList);
+        return categoryVo;
+    }
+
+    /**
+     * 通过categoryId查询分类信息
+     *
+     * @param categoryId 分类id
+     * @return
+     */
+    @Override
+    public Category getCategoryByPrimaryKey(Integer categoryId) {
+        return categoryMapper.selectByPrimaryKey(categoryId);
+    }
+
+    /**
+     * 查询指定分类下所有子分类及其商品信息
+     *
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public List<CateProductVo> getCateProductListByPreId(Integer categoryId) {
+        List<Category> categoryList = categoryMapper.selectCategoryByPreId(categoryId);
+        List<CateProductVo> cateProductVoList = new ArrayList<>();
+        for (Category category : categoryList) {
+            CateProductVo cateProductVo = new CateProductVo();
+            cateProductVo.setCategoryId(category.getId());
+            cateProductVo.setCategoryName(category.getName());
+            cateProductVo.setParentId(categoryId);
+            List<Product> productList = productMapper.selectByNameAndCategoryIds(null,Arrays.asList(category.getId()));
+            List<ProductDetailVo> productDetailVoList = new ArrayList<>();
+            for (Product product : productList) {
+                ProductDetailVo productDetailVo = assembleCateProductDetailVo(product);
+                productDetailVoList.add(productDetailVo);
+            }
+            //组装productDetailVo
+            cateProductVo.setProductList(productDetailVoList);
+            cateProductVoList.add(cateProductVo);
+        }
+        return cateProductVoList;
     }
 
 }

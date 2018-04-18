@@ -142,13 +142,10 @@
 <!-- 底部栏 -->
 <%@ include file="../common/footer.jsp" %>
 
-<script type="text/javascript" src="http://static.biyao.com/pc/common/js/jquery-1.8.3.js?v=biyao_7d074dc"></script>
+
 <script type="text/javascript" src="http://static1.biyao.com/pc/common/js/jquery.cookie.js?v=biyao_a5283b2"></script>
 <%--首页轮播和图片导航栏--%>
-<script type="text/javascript"
-        src="http://static3.biyao.com/pc/common/js/master/masterCommon.js?v=biyao_e978582"></script>
-
-
+<%@ include file="../common/commonJs.jsp"%>
 
 <script type="text/javascript" src="http://static.biyao.com/pc/www/js/master/index.js?v=biyao_a4f6158"></script>
 
