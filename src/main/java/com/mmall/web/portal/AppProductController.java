@@ -65,6 +65,6 @@ public class AppProductController {
         StringBuilder builder = new StringBuilder(ids);
         builder.append(productId+",");
         CookieUtil.writeLoginToken(response, cookieName,Const.PRODUCT_COOKIE.BROWSE_RECORDS_COOKIE, builder.toString());
-        String cookies = CookieUtil.readLoginToken(request,cookieName);
+//        String cookies = CookieUtil.readLoginToken(request,cookieName);
     }
 }
