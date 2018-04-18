@@ -43,7 +43,7 @@
     <div class="section-bread">
         <a href="${basePath}/">首页</a>
         <span class="bread-title">&gt;&nbsp;${productDetailVo.name}</span>
-    </div>
+</div>
     <div class="section-editor clearfix">
         <div class="editor-main">
             <div class="editor-picture clearfix">
@@ -61,7 +61,7 @@
                         <img src="${productDetailVo.imageHost}${productDetailVo.mainImage}">
                     </li>
                     <li class="">
-                        <img src="${productDetailVo.imageHost}${productDetailVo.mainImage}">
+                        <img src="http://img.dianpoint.com/009e0cf8343311e890a398eecb6130a9.jpg">
                     </li>
                 </ul>
             </div>
@@ -272,5 +272,23 @@
 
 
 <script type="text/javascript" src="http://static1.biyao.com/pc/common/js/bytrack.js?v=biyao_347126a"></script>
+
+<script type="text/javascript">
+    $('.editor-picture ul li').click(function () {
+        $ul = $(this).parent();
+        $ul.find('li').each(function () {
+            $(this).removeClass('main-active');
+        });
+        // console.info($ul);
+        $(this).addClass('main-active');
+        var $src = $(this).find('img').attr('src');
+        // console.info(src);
+        var $img = $ul.parent().find('p img');
+        $img.attr('src',$src)
+        // console.info($src)
+        // console.info($img.attr('src',$src))
+        //$img.attr('src',src);
+    });
+</script>
 </body>
 </html>
