@@ -123,13 +123,14 @@
 
     <div class="section-view">
         <div class="view-title clearfix">
-            <a href="/classify/supplier.html?supplierId=130146"><span></span><i>St Ovodo</i></a>
+            <a href="#"><span></span><i>浏览记录</i></a>
             <ul class="clearfix">
                 <li class="view-active" id="detail">商品信息<i></i></li>
                 <li id="evaluate">评价详情<i></i></li>
             </ul>
             <p class="view-shopCar">加入购物车</p>
         </div>
+
         <div class="view-section clearfix">
             <div class="view-supplier">
                 <ul class="supplier-recommen">

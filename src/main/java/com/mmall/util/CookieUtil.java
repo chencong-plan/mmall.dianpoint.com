@@ -42,6 +42,26 @@ public class CookieUtil {
     }
 
     /**
+     * 从request当中读取cookie
+     *
+     * @param request request
+     * @return 存在则将其返回，不存在返回null
+     */
+    public static String readLoginToken(HttpServletRequest request,String cookieName) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                log.info("read cookieName:{}", cookie.getName(), cookie.getValue());
+                if (StringUtils.equals(cookie.getName(), cookieName)) {
+                    log.info("return cookieName:{},cookieValue:{}", cookie.getName(), cookie.getValue());
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
      * 存入cookie，cookie过期时间为60 * 60 * 24 * 365
      *
      * @param response response
@@ -60,7 +80,32 @@ public class CookieUtil {
         /*同理：如果setMaxAge设置成-1 代表为永久*/
         /*单位：秒*/
         ck.setMaxAge(60 * 60 * 24 * 365);
+        log.info("write cookieName:{},cookieValue:{}", ck.getName(), ck.getValue());
+        response.addCookie(ck);
+    }
 
+
+    /**
+     * 存入cookie，cookie过期时间为60 * 60 * 24 * 365
+     *
+     * @param response response
+     * @param token    token
+     * @param value    value
+     */
+    public static void writeLoginToken(HttpServletResponse response, String cookieName,String token, String value) {
+        Cookie ck = new Cookie(token, value);
+        ck.setDomain(cookieName);
+
+        ck.setValue(value);
+        /*这是根目录，cookie存在的domain*/
+        ck.setPath("/");
+        /*保证信息安全，防止站点脚本攻击*/
+        ck.setHttpOnly(true);
+
+        /*如果这个setMaxAge不设置，cookie就不会写入硬盘，而是在内存当中，只是在当前页面有效*/
+        /*同理：如果setMaxAge设置成-1 代表为永久*/
+        /*单位：秒*/
+        ck.setMaxAge(60 * 60 * 24 * 365);
         log.info("write cookieName:{},cookieValue:{}", ck.getName(), ck.getValue());
         response.addCookie(ck);
     }
